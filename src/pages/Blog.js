@@ -18,19 +18,20 @@ export default function Blog() {
   }, []);
 
   return (
-    <section>
-      <h1>Blogs</h1>
+    <section className="section">
+      <h1 className="section-title">Blogs</h1>
+      <p class="section-title">Berikut ini adalah semua blog yang tersedia</p>
 
       {!loading ? (
-        <div>
+        <div className="articles">
           {articles.map(article => {
             return (
-              <section key={article.id}>
-                <h4>
+              <article key={article.id} className="article">
+                <h4 className="article-title">
                   <Link to={`/blog/blogdetail/${article.id}`}>{article.title}</Link>
                 </h4>
-                <p>{new Date(article.publishedAt).toLocaleDateString()}</p>
-              </section>
+                <p className="article-time">{new Date(article.publishedAt).toLocaleDateString()}</p>
+              </article>
             );
           })}
         </div>

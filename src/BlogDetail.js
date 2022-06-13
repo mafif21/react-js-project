@@ -25,27 +25,26 @@ export default function BlogDetail() {
   }, [params]);
 
   if (notFound) {
-    return <h1>Empty Data</h1>;
+    return <h1 className="section-title">Empty Data</h1>;
   }
 
   return (
-    <section>
-      <h1>Blog Detail</h1>
+    <section className="section">
+      <h1 className="section-title">Blog Detail</h1>
 
       {!loading ? (
-        <section>
-          <h1>{article.title}</h1>
-          <img src={article.imageUrl} alt={article.title} />
-          <p>{article.summary}</p>
-          <p>{new Date(article.publishedAt).toLocaleDateString()}</p>
-          <p>
-            Source:{" "}
+        <article className="article">
+          <h1 className="article-title">{article.title}</h1>
+          <p className="article-time">{new Date(article.publishedAt).toLocaleDateString()}</p>
+          <img src={article.imageUrl} alt={article.title} className="article-image" />
+          <p className="article-summary">{article.summary}</p>
+          <p className="article-source">
+            Source:
             <a href={article.url} target="_Blank" rel="noreferrer">
-              {" "}
               {article.newsSite}
             </a>
           </p>
-        </section>
+        </article>
       ) : (
         <section>
           <i>Loading Blog ....</i>

@@ -1,29 +1,95 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-nav ul {
+.app {
+  width: 315px;
+  margin: 0 auto;
+  border: 1px solid rgba(195, 195, 195, 0.933);
+  min-height: 100vh;
+}
+
+.brand {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 20px 0;
+}
+
+.nav {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 10px;
   display: flex;
+}
+
+.nav-item {
+  text-align: center;
+  width: calc(100% / 4);
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+
+.nav-item:not(:last-child) {
+  border-right: 1px solid grey;
+}
+
+.section {
+  padding: 20px;
+}
+
+.section-title {
+  margin-bottom: 10px;
+}
+
+.section-desc {
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+
+.sosmed {
   list-style: none;
 }
 
-ul li {
-  margin-right: 6px;
+.sosmed:not(:last-child) {
+  margin-bottom: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.article {
+  padding: 20px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.article:not(:last-child) {
+  border-bottom: 1px solid gray;
+}
+
+.article-title a,
+.article .article-title {
+  color: rgb(55, 55, 55);
+  text-decoration: none;
+}
+
+.article-time {
+  margin-top: 5px;
+  color: gray;
+  font-size: 12px;
+}
+
+.article-image {
+  max-width: 100%;
+  margin: 20px 0px;
+}
+
+.article-summary {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.article-source {
+  color: gray;
+  font-size: 12px;
 }
