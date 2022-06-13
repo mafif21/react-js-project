@@ -20,7 +20,7 @@ export default function Blog() {
   return (
     <section className="section">
       <h1 className="section-title">Blogs</h1>
-      <p class="section-title">Berikut ini adalah semua blog yang tersedia</p>
+      <p className="section-title">Berikut ini adalah semua blog yang tersedia</p>
 
       {!loading ? (
         <div className="articles">

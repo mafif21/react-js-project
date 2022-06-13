@@ -5,10 +5,16 @@
 }
 
 .app {
-  width: 315px;
+  width: 415px;
   margin: 0 auto;
   border: 1px solid rgba(195, 195, 195, 0.933);
   min-height: 100vh;
+}
+
+@media (max-width: 415px) {
+  .app {
+    width: 100%;
+  }
 }
 
 .brand {
