@@ -5,10 +5,16 @@ export default function BlogDetail() {
   const params = useParams();
   const [article, setArticle] = useState({});
   const [loading, setLoading] = useState(true);
+  const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
     async function getDetail() {
       const data = await fetch(`https://api.spaceflightnewsapi.net/v3/articles/${params.id}`);
+
+      if (!data.ok) {
+        return setNotFound(true);
+      }
+
       const response = await data.json();
 
       setArticle(response);
@@ -17,6 +23,10 @@ export default function BlogDetail() {
 
     getDetail();
   }, [params]);
+
+  if (notFound) {
+    return <h1>Empty Data</h1>;
+  }
 
   return (
     <section>
@@ -29,13 +39,17 @@ export default function BlogDetail() {
           <p>{article.summary}</p>
           <p>{new Date(article.publishedAt).toLocaleDateString()}</p>
           <p>
+            Source:{" "}
             <a href={article.url} target="_Blank" rel="noreferrer">
-              Link
+              {" "}
+              {article.newsSite}
             </a>
           </p>
         </section>
       ) : (
-        <section></section>
+        <section>
+          <i>Loading Blog ....</i>
+        </section>
       )}
     </section>
   );
