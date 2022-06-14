@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
-import BlogDetail from "./BlogDetail";
+import BlogDetail from "./pages/BlogDetail";
 
 function App() {
   return (

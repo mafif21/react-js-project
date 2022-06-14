@@ -11,6 +11,8 @@ export default function Blog() {
       const request = await fetch("https://api.spaceflightnewsapi.net/v3/articles");
       const data = await request.json();
 
+      document.title = "Blog";
+
       setArticles(data);
       setLoading(false);
     }
